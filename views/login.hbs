@@ -1,0 +1,15 @@
+<form id="formLogin" class="container">
+  <h2>Заполните данные</h2>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Почта</label>
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" autofocus required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Пароль</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+          minlength="8" required>
+  </div>
+  <div id="feedback" class="invalid-feedback"></div>
+  <button type="submit" class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">Войти</button>
+</form>
+<script defer src='/js/login.js'></script>

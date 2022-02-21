@@ -1,0 +1,22 @@
+<main class="container">
+  <section>
+    <h3>{{resultTitle}}</h3>
+    <div class='movies'>
+      {{#each filmsResult}}
+        <div class='film-card'>
+          <div class='film'>
+            <img src={{this.img}} alt={{this.title}} />
+            <div class='rating high-rating'><p>{{this.rating}}</p></div>
+            <p class='film-name'><span data-title='{{this.dataAttribute}}'>{{this.title}}</span></p>
+            <p>{{this.date}}</p>
+            <p><a href='/info/{{this.id}}'>Больше информации о фильме</a></p>
+            {{#if ../isAuthorized}}
+            <p id='add-to-favourite'><span data-film-id={{this.id}} class='heart'>Добавить в избранное &hearts;</span><p>
+            <p id='delete-from-favourite'><i data-film-id={{this.id}} class='gg-trash'></i></p>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+</main>

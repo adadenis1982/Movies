@@ -1,0 +1,23 @@
+<form id="formRegistration" class="container">
+  <h2>Зарегистрироваться</h2>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Имя</label>
+    <input type="text" class="form-control" name="username" id="exampleInputUsername" aria-describedby="emailHelp" autofocus required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Почта</label>
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Пароль</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+          minlength="8" required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Подтвердить пароль</label>
+    <input type="password" class="form-control" id="exampleInputConfirmPassword" minlength="8" required>
+  </div>
+  <div id="feedback" class="invalid-feedback"></div>
+  <button type="submit" class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">Зарегистрироваться</button>
+</form>
+<script defer src='/js/register.js'></script>

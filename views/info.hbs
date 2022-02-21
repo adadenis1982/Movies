@@ -1,0 +1,62 @@
+<main>
+  <div class="film-info">
+    <h1 class="text-center mb-3">{{film.title}}</h1>
+      <div class="film d-flex justify-content-between">
+        <div class="film-img">
+          <img src={{film.img}} alt={{film.title}}>
+          {{#if film.isLike}}
+          <div class="buttons d-flex justify-content-end">
+            <p id="add-to-favourite"><span data-film-id={{film.id}} class="heart">&hearts;</span></p>
+            <button id="add-comment" data-film-id={{film.id}} class="btn btn-success">Комментарии</button>
+          </div>
+          {{/if}}
+        </div>
+        <div class="film-info-description" >
+          <div class="rating high-rating"><p>{{film.rating}}</p></div>
+          {{#if film.tagline}}
+          <div>
+            <h4>Слоган</h4>
+            <p>{{film.tagline}}</p>
+          </div>
+          {{/if}}
+          <div>
+            <h4>Описание</h4>
+            <p>{{film.description}}</p>
+          </div>
+          <div>
+            <h4>Жанр</h4>
+            <p>{{film.genres}}</p>
+          </div>
+          <div>
+            <h4>Бюджет</h4>
+            <p>{{film.budget}}</p>
+          </div>
+          <div>
+            <h4>Дата выхода</h4>
+            <p>{{film.date}}</p>
+          </div>
+          <div>
+            <h4>IMDB</h4>
+            <p><a href="{{film.IMDBlink}}" target="_blank">Перейти на сайт Imdb</a></p>
+          </div>
+        </div>
+        
+      </div>
+  </div>
+  
+</main>
+{{#if film.comments}}
+<main>
+  <div class="comment-info">
+    <h1 class="text-center mb-3">Комментарии</h1>
+    {{#each film.comments}}
+    <div class="comment mb-2 d-flex">
+      <span class="comment-text">"{{this.comment}}"</span> - <span class="comment-autor">{{this.username}} </span>
+      {{#if this.isCommentByUser}}
+      <i  id="delete-comment" class="gg-trash" data-film-id="{{this.movieId}}" data-comment-id="{{this.commentId}}"></i>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+</main>
+{{/if}}

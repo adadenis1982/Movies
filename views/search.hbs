@@ -1,0 +1,23 @@
+<main class="container">
+  <h3 class="text-center">Поиск фильмов</h3>
+  <form id="searchByNameForm" class="mb-3" action="/search/byName" method="POST">
+    <div class="mb-3">
+      <label for="searchByName" class="form-label">По названию</label>
+      <input name="filmInput" required type="text" class="form-control" id="searchByName">
+    </div>
+    <button type="submit" class="btn btn-success">Найти</button>
+  </form>
+  <form id="searchByTypeForm" class="mb-3" action="/search/byType" method="POST">
+      <div class="mb-3">
+        <label for="searchByType" class="form-label">По типу</label>
+        <select class="form-select" name="type" aria-label="Default select example" id="searchByType">
+        <option selected value="popular">Популярные</option>
+        <option value="top_rated">Топ рейтинг</option>
+        <option value="upcoming">Новинки</option>
+        <option value="now_playing">Сейчас на экранах</option>
+      </select> 
+      </div>
+      <button type="submit" class="btn btn-success">Найти</button>
+  </form>
+</main>
+<script defer src='/js/search.js'></script>
